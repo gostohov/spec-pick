@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -63,6 +64,12 @@ module.exports = {
       title: 'Output Management',
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/img', to: 'src/img' },
+        // { from: 'other', to: 'public' },
+      ],
+    }),
   ]
 };
