@@ -49,11 +49,38 @@ body {
                     
                     .spec__avatar {
                         cursor: pointer;
+                        position: relative;
                         
                         img {
                             width: 40px;
                             height: 40px;
                             border-radius: 20px;
+                        }
+
+                        .spec-counter__wrapper {
+                            display: flex;
+                            align-items: center;
+                            text-align: center;
+                            text-transform: uppercase;
+                            justify-content: center;
+                            width: 16px;
+                            height: 16px;
+                            background: #007AFF;
+                            position: absolute;
+                            top: 0;
+                            right: -5px;
+                            border-radius: 8px;
+                            z-index: 4;
+
+
+                            .spec-counter {
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 11px;
+                                line-height: 16px;
+                                color: #fff;
+                            }
                         }
         
                         &.selected {

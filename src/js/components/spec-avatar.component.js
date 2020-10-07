@@ -7,9 +7,18 @@ export default class SpecAvatar {
     }
 
     render() {
+        const storeListNumber = this.state.storeList.length;
         const el = document.createElement('div');
         el.classList.add('spec__avatar');
-        el.innerHTML = `<img src="${this.state.iconUrl || '/src/img/test-avatar.svg'}">`;
+        el.innerHTML = `
+            <img src="${this.state.iconUrl || '/src/img/test-avatar.svg'}">
+            ${
+                    storeListNumber ? 
+                    `<div class="spec-counter__wrapper">
+                        <span class="spec-counter">${storeListNumber}</span>
+                    </div>` : ''
+            }
+        `;
         el.onclick = () => this.onselect(this.state);
 
         if (this.state.selected) {
