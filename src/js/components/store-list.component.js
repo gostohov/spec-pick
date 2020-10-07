@@ -69,8 +69,6 @@ export default class StoreListComponent {
             const el = new Store(item, (store) => this.addStoreToSpec(store));
             elements.storeList().appendChild(el);
         });
-        // Отобразили количество нераспределенных магазинов
-        elements.storeListCountNumber().innerHTML = list.length;
     }
 }
 

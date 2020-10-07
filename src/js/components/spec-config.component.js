@@ -227,7 +227,7 @@ class SpecStore {
         `;
 
         const trashButton = document.createElement('button');
-        trashButton.classList.add('select-spec__trash');
+        trashButton.classList.add('spec-spec__trash');
         trashButton.innerHTML = '<img src="/src/img/trash-can.svg">';
         trashButton.onclick = () => this.deleteSpec();
         

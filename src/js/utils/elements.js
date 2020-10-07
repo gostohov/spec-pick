@@ -8,6 +8,7 @@ export const elements = {
     avatarSpecSelected: () => document.querySelector('.selected'),
     avatarSpecSpacer: () => document.querySelector('.spec-avatar__spacer'),
     colSelectSpec: () => document.querySelector('.left'),
+    storeListCount: () => document.querySelector('.store-list__count'),
     storeListCountNumber: () => document.querySelector('.store-list__count-number'),
     selectSpecInput: () => document.querySelector('.select-spec__input'),
     selectSpecNameList: () => document.querySelector('.select-spec__namelist'),
