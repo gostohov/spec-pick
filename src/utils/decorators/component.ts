@@ -28,7 +28,7 @@ interface ComponentParams {
     shadow?: boolean
 }
 
-export default function Component(params: ComponentParams) {
+export function Component(params: ComponentParams) {
     return function (target: any) {
         const wcShadowCreated = Symbol('wc__shadowCreated');
         const tag = params.tag;

@@ -1,3 +1,3 @@
-export default interface OnInit {
+export interface OnInit {
     onInit(): void;
 }

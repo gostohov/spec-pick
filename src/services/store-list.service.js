@@ -1,9 +1,9 @@
-export default class SpecListService {
+export class StoreListService {
     constructor(url) {
         this.url = url;
     }
 
-    async getSpecList() {
+    async getStoreList() {
         const response = await fetch(this.url);
         return await response.json();
     }
