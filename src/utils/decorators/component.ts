@@ -51,6 +51,7 @@ export function Component(params: ComponentParams) {
                     ...args.concat((providers as any)
                         .slice(args.length)
                         .map((instance: any) => {
+                            console.log(instance)
                             return IoC.resolve(instance)
                         }))
                 ) as any;

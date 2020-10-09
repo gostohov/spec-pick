@@ -21,24 +21,21 @@
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.4.4",
     "autoprefixer": "^9.8.6",
-    "typescript": "^4.0.3",
-
     "reflect-metadata": "^0.1.13",
-    "inversify": "^5.0.1",
+    "typescript": "^4.0.3",
+    "node-sass": "^4.9.3",
+    "precss": "^3.1.2",
     
-    "html-webpack-plugin": "^3.2.0",
     "copy-webpack-plugin": "^6.2.0",
+    "html-webpack-plugin": "^3.2.0",
     "clean-webpack-plugin": "^0.1.19",
     "mini-css-extract-plugin": "^0.4.3",
     "extract-text-webpack-plugin": "^3.0.2",
     
-    "precss": "^3.1.2",
-    "node-sass": "^4.9.3",
-    
-    "raw-loader": "^4.0.1",
     "ts-loader": "^8.0.4",
-    "css-loader": "^1.0.0",
     "url-loader": "^4.1.0",
+    "raw-loader": "^4.0.1",
+    "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",

@@ -15,5 +15,6 @@
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": false,
     "noResolve": false,
+    "strictPropertyInitialization": false
   }
 }

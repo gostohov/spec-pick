@@ -2,8 +2,7 @@ import AppComponent from './app.component';
 import SpecConfigComponent from './components/spec-config.component';
 import { State } from '../utils/state';
 import { SaveChangesButtonComponent, SpecAvatarListComponent } from '../components';
-import { SpecListCheckService } from '../services';
-import { iocContainer } from '../utils';
+import { StoreListService } from '../services';
 
 /**
  * Класс для внедрения новых зависимостей в приложение
@@ -28,8 +27,8 @@ export default class AppModule {
                 SpecAvatarListComponent
             ],
             providers: [
-                iocContainer,
-                SpecListCheckService
+                StoreListService,
+                
             ]
         }
 
