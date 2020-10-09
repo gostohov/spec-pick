@@ -4,16 +4,48 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports = {
+module.exports = (env, argv) => ({
+  mode: 'development',
   entry: [
-    './src/index.js'
+    './src/main.ts'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true
+  },
+  devtool: argv.mode === 'production'? 'none' : 'inline-source-map',
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(ts|js)$/,
+        enforce: 'pre',
+        use: [
+          { loader: 'source-map-loader' },
+          { loader: 'template-url-webpack' },
+          { loader: 'style-url-webpack' }
+        ],
+        include: [path.resolve(__dirname, 'src')]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          { 
+            loader: 'raw-loader',
+            options: {
+              esModule: false,
+            },
+          }
+        ],
+      },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
@@ -47,13 +79,11 @@ module.exports = {
           name:'[name].[ext]',
           outputPath:'assets'
         }
-      },
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: ['source-map-loader'],
-      },
+      }
     ]
+  },
+  resolve: {
+      extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -68,8 +98,12 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/img', to: 'src/img' },
-        // { from: 'other', to: 'public' },
+        {
+          context: 'node_modules/@webcomponents/webcomponentsjs',
+          from: '**/*.js',
+          to: 'webcomponents'
+        },
       ],
     }),
   ]
-};
+});

@@ -1,5 +1,9 @@
+import { State } from "../utils/state";
+
 export default class AppComponent {
-    constructor(state) {
+    private state: State;
+
+    constructor(state: State) {
         this.state = state;
         this.init();
     }

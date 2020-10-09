@@ -1,5 +1,5 @@
 import { filter } from "rxjs/operators";
-import { elements } from "../utils/elements";
+import { elements } from "../../utils/elements";
 
 export default class StoreListCountComponent {
     constructor(state) {

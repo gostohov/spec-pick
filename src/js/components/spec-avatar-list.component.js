@@ -1,4 +1,4 @@
-import { elements } from "../utils/elements";
+import { elements } from "../../utils/elements";
 import { filter } from 'rxjs/operators';
 import SpecAvatar from "./spec-avatar.component";
 
