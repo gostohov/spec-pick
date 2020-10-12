@@ -1,0 +1,21 @@
+.add-spec__control {
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+
+    .add-spec__button {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        font-size: 16px;
+        font-family: robo;
+
+        &:hover {
+            background-color: rgb(231, 231, 231);
+        }
+    }
+}

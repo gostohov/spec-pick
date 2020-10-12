@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "strict": true,
+    "strict": false,
     "target": "ES6",
     "sourceMap": true,
     "allowJs": true,

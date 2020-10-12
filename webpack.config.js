@@ -97,7 +97,7 @@ module.exports = (env, argv) => ({
     new CleanWebpackPlugin(['dist']),
     new CopyPlugin({
       patterns: [
-        { from: 'src/img', to: 'src/img' },
+        { from: 'assets/img/', to: 'assets/img/' },
         {
           context: 'node_modules/@webcomponents/webcomponentsjs',
           from: '**/*.js',
