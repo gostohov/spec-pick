@@ -65,7 +65,7 @@ export class SpecAvatarListComponent extends HTMLElement implements OnInit {
             const template = document.createElement('template');
             template.innerHTML = `<spec-avatar  id="${item.id}" 
                                                 iconUrl="${item.iconUrl || ''}" 
-                                                storeListCount="${item.storeListCount || ''}"
+                                                storeListCount="${item.storeList?.length || ''}"
                                                 selected="${item.selected || ''}"></spec-avatar>`;
             template.content.lastChild.addEventListener('click', () => this.selectAvatar(item));
             this.avatarSpecList().appendChild(template.content);
