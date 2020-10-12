@@ -7,8 +7,8 @@
 - Angular
 
 Для каждого подхода своя ветка в репозитории, соответственно:
-- [vanilla-js]()
-- [web-component]()
+- [vanilla-js](https://github.com/gostohov/spec-pick-vanilla-js.git)
+- [web-component](https://github.com/gostohov/spec-pick/tree/web-component)
 - react
 - angular
 
