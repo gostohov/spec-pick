@@ -1,16 +1,16 @@
-## Пикер специалиста для обслуживания магазина
+## Пикер специалиста для обслуживания магазина (Vanilla-JS)
 ----------
-
 ### Стек
 
 - Vanila JS
 - RxJs
 - Webpack
 
+----------
+
 ### Preview
 
-https://spec-pick-vanilla-js.web.app/
+- [vanilla-js](https://spec-pick-vanilla-js.web.app/)
 
 ----------
 ### Deployed on Firebase
-
