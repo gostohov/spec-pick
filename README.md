@@ -3,7 +3,6 @@
 ### Стек
 
 - React JS
-- RxJs
 - MobX
 ----------
 
