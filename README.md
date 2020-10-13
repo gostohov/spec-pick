@@ -15,7 +15,7 @@
 
 ### Preview
 
-- [vanilla-js](https://spec-pick-vanilla-js.web.app/) 
+- [spec-pick-vanilla-js](https://spec-pick-vanilla-js.web.app/) 
 - [web-component](https://spec-pick-web-component.web.app/)
 - react
 - angular
