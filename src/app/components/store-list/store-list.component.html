@@ -1,0 +1,23 @@
+<ng-container *ngIf="(storeList$ | async) as storeList">
+  <div class="store-list__wrapper">
+      <div class="store-list__count">
+        <ng-container *ngIf="storeList.length">
+          <span>Нераспределенные магазины: <span class="store-list__count-number">{{storeList.length}}</span></span>
+          <img src="../../../assets/img/attention.svg" alt="Внимание!" />
+        </ng-container>
+        <ng-container *ngIf="!storeList.length">
+          <span>Нераспределенных магазинов нет!</span>
+        </ng-container>
+      </div>
+      <div class="store-list">
+        <div class="store" *ngFor="let store of storeList" (click)="pickStore(store)">
+          <img src="../../../assets/img/arrow-left.svg">
+          <img [src]="store.icon">
+          <div class="store-data">
+            <span class="header">{{ store.name }}</span>
+            <span class="sub-header">{{ store.fullAddress }}</span>
+          </div>
+        </div>
+      </div>
+  </div>
+</ng-container>

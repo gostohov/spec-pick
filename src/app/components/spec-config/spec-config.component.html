@@ -1,0 +1,70 @@
+<ng-container>
+  <ng-container *ngIf="!selectedAvatar" [ngTemplateOutlet]="specEmpty"></ng-container>
+  <ng-container *ngIf="selectedAvatar && !selectedAvatar.fullName" [ngTemplateOutlet]="specPick"></ng-container>
+  <ng-container *ngIf="selectedAvatar && selectedAvatar.fullName" [ngTemplateOutlet]="specStore"></ng-container>
+</ng-container>
+
+<ng-template #specEmpty>
+  <div class="container no-spec">
+    <div class="no-spec-alert">
+      <span class="header">СПЕЦИАЛИСТ НЕ НАЗНАЧЕН</span>
+      <span class="sub-header">Чтобы начать работу с нераспределенными магазинами, вам необходимо добавить хотя бы одного специалиста</span>
+      <img src="../../../assets/img/add-spec.svg" alt="Добавить специалиста" />
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #specPick>
+  <div class="container select-spec">
+    <button class="select-spec__close">x</button>
+    <div class="select-spec__wrapper">
+      <span class="select-spec__title">Выберите специалиста</span>
+      <input class="select-spec__input" type="text" name="name" list="select-spec__namelist" (change)="setSpecToAvatar($event)">
+        <datalist id="select-spec__namelist">
+          <option *ngFor="let spec of specList" [value]="spec.fullName">
+        </datalist>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #specStore>
+  <div class="container select-spec">
+    <button class="select-spec__close" (click)="onclose()">x</button>
+    <div class="select-spec__wrapper">
+      <span class="select-spec__title">Специалист</span>
+      <div class="spec-config">
+        <div>
+          <img class="spec-config__avatar" [src]="selectedAvatar.iconUrl">
+          <span class="spec-config__fullname">{{selectedAvatar.fullName}}</span>
+          <span class="spec-config__store_count">{{selectedAvatar.storeList.length}} маг.</span>
+        </div>
+        <button class="spec-config__trash" (click)="deleteSpec()"><img src="../../../assets/img/trash-can.svg"></button>
+      </div>
+      <span class="select-spec__title">Магазины</span>
+
+      <div class="select-spec__warning" *ngIf="!selectedAvatar.storeList || !selectedAvatar.storeList.length; else store">
+        <span>Не назначены</span>
+        <img src="../../../assets/img/attention.svg" alt="Внимание!">
+      </div>
+
+      <ng-template #store>
+        <div class="spec-store__list">
+          <div class="spec-store" *ngFor="let store of selectedAvatar.storeList">
+            <div class="spec-store__info">
+              <img src="../../../assets/img/arrow-left.svg">
+              <img [src]="store.icon">
+              <div class="store-data">
+                  <span class="header">{{store.name}}</span>
+                  <span class="sub-header">{{store.fullAddress}}</span>
+              </div>
+            </div>
+            <button class="spec-store__trash" (click)="deleteFromStoreList(store)">
+              <img src="../../../assets/img/exclude.svg">
+            </button>
+          </div>
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+</ng-template>

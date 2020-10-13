@@ -1,0 +1,50 @@
+.container {
+  background: #fafafa;
+
+  height: 567px;
+  width: 1104px;
+
+  .wrapper {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content auto;
+    gap: 2em;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    .row {
+      grid-column: 1 / span 2;
+
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      max-height: 3em;
+    }
+
+    .col {
+      width: 100%;
+      height: 100%;
+
+      &.left {
+        grid-column: 1;
+        border-radius: 4px;
+        background: #fff;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+      }
+
+      &.right {
+        grid-column: 2;
+        border: 1px dashed rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        display: flex;
+        flex-flow: column;
+        overflow: hidden;
+      }
+    }
+  }
+}

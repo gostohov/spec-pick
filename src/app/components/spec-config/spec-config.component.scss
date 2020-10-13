@@ -1,0 +1,200 @@
+.container {
+  width: 100%;
+  height: 100%;
+
+  &.no-spec {
+    display: grid;
+    place-items: center;
+
+    background: #f2f2f2;
+
+    .no-spec-alert {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: .5em;
+      width: 360px;
+
+      .header {
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+      .sub-header {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.44);
+      }
+    }
+  }
+
+  &.select-spec {
+    position: relative;
+    box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+
+    .select-spec__close {
+      position: absolute;
+      right: 0;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .select-spec__wrapper {
+      padding: 1em;
+      display: flex;
+      flex-flow: column;
+      gap: 1em;
+      overflow: hidden;
+
+      .select-spec__title {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.32);
+        z-index: 1;
+      }
+
+      .select-spec__warning {
+        display: inline-flex;
+        align-items: center;
+        gap: 1em;
+      }
+
+      .spec-config {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1em;
+
+          .spec-config__avatar {
+            height: 32px;
+            width: 32px;
+            border-radius: 20px;
+          }
+
+          .spec-config__fullname {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            color: #424242;
+          }
+
+          .spec-config__store_count {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            color: #007AFF;
+          }
+        }
+
+
+        .spec-config__trash {
+          height: 13px;
+          border: none;
+          outline: none;
+          background: unset;
+          cursor: pointer;
+        }
+
+
+      }
+
+      .spec-store__list {
+        margin-left: 2em;
+        display: flex;
+        flex-flow: column;
+        overflow-y: scroll;
+
+        /* Firefox-only */
+        & {
+          scrollbar-width: thin;
+          scrollbar-color: rgb(168, 168, 168) #e5e5e5;
+        }
+
+        /* Works on Chrome/Edge/Safari */
+        &::-webkit-scrollbar {
+          width: 12px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #e5e5e5;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: rgb(168, 168, 168);
+          border-radius: 20px;
+          border: 3px solid #e5e5e5;
+        }
+
+        .spec-store {
+          display: inline-flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .spec-store__info {
+            display: inline-flex;
+            align-items: center;
+            gap: 1em;
+            cursor: pointer;
+            padding: 1em;
+
+            &:hover {
+              .store-data {
+                border-bottom: 1px solid black;
+              }
+            }
+
+            .store-data {
+              display: flex;
+              flex-flow: column nowrap;
+
+              .header {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: rgba(0, 0, 0, 0.72);
+              }
+
+              .sub-header {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 11px;
+                line-height: 12px;
+                color: rgba(0, 0, 0, 0.32);
+              }
+            }
+          }
+
+          .spec-store__trash {
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

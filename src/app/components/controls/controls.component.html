@@ -1,0 +1,25 @@
+<div class="left__control">
+
+  <div class="spec-avatar__list">
+    <div  *ngFor="let avatar of avatarList"
+          class="spec__avatar"
+          [ngClass]="{'selected': avatar.selected}"
+          (click)="selectAvatar(avatar)">
+      <img [src]="avatar.iconUrl">
+      <div class="spec-counter__wrapper" *ngIf="avatar.storeList.length">
+        <span class="spec-counter">{{avatar.storeList.length}}</span>
+      </div>
+      <div class="spec-avatar__spacer" *ngIf="avatar.selected"></div>
+    </div>
+  </div>
+
+  <div class="add-spec__control">
+    <button (click)="addAvatar()" class="add-spec__button">+</button>
+    <span>Добавить специалиста</span>
+  </div>
+</div>
+
+<button class="save-changes__button" (click)="saveChanges()">
+  <span class="save-changes__message">Сохранить изменения</span>
+  <img src="../../../assets/img/check.svg" alt="Сохранить изменения">
+</button>
