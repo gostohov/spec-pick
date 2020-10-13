@@ -1,0 +1,8 @@
+.controls {
+    grid-column: 1 / span 2;
+
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    max-height: 3em;
+}

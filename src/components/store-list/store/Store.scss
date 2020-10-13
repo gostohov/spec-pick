@@ -1,0 +1,36 @@
+.store {
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    cursor: pointer;
+
+    &:hover {
+        .store-data {
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .store-data {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .header {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: rgba(0, 0, 0, 0.72);
+        }
+
+        .sub-header {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 11px;
+            line-height: 12px;
+            color: rgba(0, 0, 0, 0.32);
+        }
+    }
+}

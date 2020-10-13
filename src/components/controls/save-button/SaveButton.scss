@@ -1,0 +1,19 @@
+.save-changes__button {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1em;
+    padding: 0px 1em;
+    border: 1px solid #474747;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(231, 231, 231);
+    }
+
+    .save-changes__message {
+        white-space: nowrap;
+    }
+}
