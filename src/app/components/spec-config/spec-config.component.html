@@ -16,7 +16,7 @@
 
 <ng-template #specPick>
   <div class="container select-spec">
-    <button class="select-spec__close">x</button>
+    <button class="select-spec__close" (click)="onclose()">x</button>
     <div class="select-spec__wrapper">
       <span class="select-spec__title">Выберите специалиста</span>
       <input class="select-spec__input" type="text" name="name" list="select-spec__namelist" (change)="setSpecToAvatar($event)">
