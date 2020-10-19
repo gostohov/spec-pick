@@ -11,7 +11,7 @@ export const StoreList: FC<{ state: StoreListState }> = observer(({ state }) => 
         <div className="col right">
             <div className="store-list__wrapper">
                 <div className="store-list__count">
-                    <span>Нераспределенные магазины: <span className="store-list__count-number">7</span></span>
+                    <span>Нераспределенные магазины: <span className="store-list__count-number">{state.storeList.length}</span></span>
                     <img src={attention} alt="Внимание!" />
                 </div>
                 <div className="store-list">

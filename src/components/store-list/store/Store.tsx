@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import './Store.scss'
 import arrowLeft from '../../../assets/img/arrow-left.svg';
+import { IStore } from '../StoreList.state';
 
-export function Store() {
+export const Store: FC<{ state: IStore, pickStore: (store: IStore) => void }> = ({state, pickStore}) => {
     return (
-        <div className="store">
+        <div className="store" onClick={() => pickStore(state)}>
             <img src={arrowLeft} alt="Указатель" />
-            <img src="https://i.imgur.com/ublxFpg.png" alt="Иконка магазина" />
+            <img src={state.icon} alt="Иконка магазина" />
             <div className="store-data">
-                <span className="header">Brandshop на Дмитровской 9</span>
-                <span className="sub-header">г. Москва, ул. Курская, д. 392б, стр. 3, офис 239</span>
+                <span className="header">{state.name}</span>
+                <span className="sub-header">{state.fullAddress}</span>
             </div>
         </div>
     );
